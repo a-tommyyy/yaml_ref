@@ -1,0 +1,2 @@
+summary: "YAML file ref resolver"
+description: "Expand the $ref that refers to the file in the yaml file."

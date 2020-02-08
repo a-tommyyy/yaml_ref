@@ -1,0 +1,14 @@
+gem:
+  name: YamlRef
+  information:
+    summary: "YAML file ref resolver"
+    description: "Expand the $ref that refers to the file in the yaml file."
+  license:
+    $ref: '#/schema/MIT'
+  releases:
+    - version: "0.0.1"
+      features:
+        vision: 'Allow file $ref with relative path.'
+      authors:
+        - 'atomiyama'
+

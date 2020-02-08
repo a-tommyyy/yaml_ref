@@ -1,0 +1,6 @@
+version: "0.0.1"
+features:
+  $ref: '../0_0_1/features.yml'
+authors:
+  $ref: '../0_0_1/authors.yml'
+
