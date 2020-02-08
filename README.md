@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/atomiyama/yaml_ref.svg?branch=master)](https://travis-ci.org/atomiyama/yaml_ref)
+
 # YamlRef
 
 YamlRef allows you to define $ref that refers file with relative path.
