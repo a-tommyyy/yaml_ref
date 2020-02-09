@@ -88,6 +88,9 @@ module YamlRef
 
     def file_ref(filepath, refpath)
       path = File.expand_path(File.join(@ref_home || filepath, refpath))
+      raise(Error, <<~MESSAGE) unless File.exist?(path)
+      No such yml file -- #{path}
+      MESSAGE
       [YAML.load_file(path), path]
     end
   end

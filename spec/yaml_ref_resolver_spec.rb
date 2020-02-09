@@ -6,15 +6,27 @@ RSpec.describe YamlRef do
   describe ".load_file" do
     subject { described_class.load_file(path) }
 
-    let(:path) do
-      File.join(File.expand_path(__dir__), "fixtures", "test.yml")
-    end
-    let(:expect_hash) do
-      YAML.load_file(File.join(File.expand_path(__dir__), "fixtures", "expect.yml"))
+    context "Valid file" do
+      let(:path) do
+        File.join(File.expand_path(__dir__), "fixtures", "test_success.yml")
+      end
+      let(:expect_hash) do
+        YAML.load_file(File.join(File.expand_path(__dir__), "fixtures", "expect.yml"))
+      end
+
+      it "parse correctly" do
+        is_expected.to eq(expect_hash)
+      end
     end
 
-    it "parse correctly" do
-      is_expected.to eq(expect_hash)
+    context "Invalid file" do
+      let(:path) do
+        File.join(File.expand_path(__dir__), "fixtures", "test_fail.yml")
+      end
+
+      it "should raise errorr" do
+        expect { subject }.to raise_error(YamlRef::Error)
+      end
     end
   end
 end
