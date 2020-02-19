@@ -15,7 +15,6 @@ module YamlRef
     def load_file(path, ref_home: nil)
       result = ERB.new(File.read(path)).result
       schema = YAML.load(result)
-      binding.pry
       @ref_home = ref_home || schema["ref_home"]
       parse_schema(schema, path)
     end
