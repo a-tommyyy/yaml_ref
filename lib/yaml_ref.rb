@@ -13,7 +13,9 @@ module YamlRef
     # pass ref_home argument or define ref_home on root level in YAML file.
     #
     def load_file(path, ref_home: nil)
-      schema = YAML.load_file(path)
+      result = ERB.new(File.read(path)).result
+      schema = YAML.load(result)
+      binding.pry
       @ref_home = ref_home || schema["ref_home"]
       parse_schema(schema, path)
     end
