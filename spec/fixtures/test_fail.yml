@@ -1,7 +1,7 @@
 gem:
   name: YamlRef
   information:
-    $ref: '../information.yml'
+    $ref: './information.yml'
   license:
     $ref: '#/schema/MIT'
   releases:

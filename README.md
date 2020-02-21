@@ -34,11 +34,11 @@ It has the following effects:
 gem:
   name: YamlRef
   information:
-    $ref: '../information.yml'
+    $ref: './information.yml'
   license:
     $ref: '#/schema/MIT'
   releases:
-    - $ref: '../releases/0_0_1.yml'
+    - $ref: './releases/0_0_1.yml'
 ```
 
 ```yaml
